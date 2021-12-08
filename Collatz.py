@@ -19,13 +19,16 @@ def collatz(a):
 
 #Input the number
 try:
-    number = int(input("Enter a number: "))
+    number = int(input("Enter a positive integer: "))
 
-    c = number
-    while True:
-        c = collatz(c)
-        if c == 1:
-            break
+    if number > 0:
+        c = number
+        while True:
+            c = collatz(c)
+            if c == 1:
+                break
+    else:
+        print("Enter a positive integer")
 except ValueError:
     print("Enter an integer")
 
